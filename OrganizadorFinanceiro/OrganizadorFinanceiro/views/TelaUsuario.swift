@@ -38,8 +38,14 @@ class TelaUsuario{
         
         print("1 - Adicionar um novo gasto.\n2 - Passar um dia.\n\n0 - Voltar.")
         let escolha = readLine(strippingNewline: true)
+        guard let escolhaAux = escolha else{
+            fatalError()
+        }
+        guard let escolhaInt = Int(escolhaAux) else {
+            fatalError()
+        }
         
-        if let escolhaAux = escolha, let escolhaInt = Int(escolhaAux), escolhaInt < 3 && escolhaInt > -1{
+        if escolhaInt < 3 && escolhaInt > -1{
             switch escolhaInt{
             case 0:
                 let telaInicial = TelaInicial(controlador:controlador)
