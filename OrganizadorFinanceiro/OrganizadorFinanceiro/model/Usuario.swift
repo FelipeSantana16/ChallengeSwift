@@ -34,6 +34,10 @@ class Usuario{
         return valorDisponivelDiario
     }
     
+    var calculoDiario: Double = {
+        return (salario - valorGastoMensal)/30
+    }
+    
     
     
 }
